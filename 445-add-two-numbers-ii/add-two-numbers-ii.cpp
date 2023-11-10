@@ -31,6 +31,7 @@ public:
             head->next = ans;
             ans = head;
             sum/=10;
+            
             if(!s1.empty())s1.pop();
             if(!s2.empty())s2.pop();
         }
