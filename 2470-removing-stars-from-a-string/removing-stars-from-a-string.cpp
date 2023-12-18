@@ -15,7 +15,7 @@ public:
             ans+=st.top();
             st.pop();
         }
-        // reverse the string..
+        // reverse the string for the answer from..
         reverse(ans.begin(), ans.end());
         return ans;
     }
