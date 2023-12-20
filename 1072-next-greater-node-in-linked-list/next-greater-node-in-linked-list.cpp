@@ -16,6 +16,7 @@ public:
             res.push_back(head->val);
             head=head->next;
         }
+        // store in array
         for(int i=res.size()-1;i>=0;i--){
             auto val = res[i];
             while(!st.empty() && st.back() <= res[i]) st.pop_back();
