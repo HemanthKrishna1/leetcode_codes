@@ -5,7 +5,7 @@ public:
 
         int i=0,j=0;
         int start = 0, ans = INT_MAX;
-
+        // start and ans for the satrt and end points of the substr.
         map<char,int> mpp;
         for(auto &it: t){
             mpp[it]++;
