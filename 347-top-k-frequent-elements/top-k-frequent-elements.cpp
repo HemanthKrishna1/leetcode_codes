@@ -1,22 +1,24 @@
 class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
-        vector<int> ans;
+        vector<vector<int>> res(nums.size()+1);
         map<int,int> mpp;
-        for(auto &it: nums){
+        for(auto &it : nums) {
             mpp[it]++;
         }
-        vector<vector<int>> counts(nums.size()+1);
         for(auto it: mpp){
-            counts[it.second].push_back(it.first);
+            res[it.second].push_back(it.first);
         }
-
-        for(int i=counts.size()-1;i>=0;i--){
-            for(int j=0;j<counts[i].size();j++){
-                ans.push_back(counts[i][j]);
-                if(ans.size() == k) return ans;
+        vector<int> sol;
+        int last = res.size()-1;
+        for(int j=last;j>=0;j--){
+            if(res[j].size() > 0){
+                for(int i=0;i<res[j].size();i++){
+                    sol.push_back(res[j][i]);
+                    if(sol.size() == k) return sol;
+                }
             }
         }
-        return ans;
+        return sol;
     }
 };
