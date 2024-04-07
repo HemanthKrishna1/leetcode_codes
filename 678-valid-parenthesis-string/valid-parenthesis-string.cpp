@@ -18,6 +18,7 @@ public:
                 }
             }
         }
+        // check if can be modified
         while(!st1.empty() && !st2.empty()){
             if(st1.top() > st2.top()){
                 return false;
